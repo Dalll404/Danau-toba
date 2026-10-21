@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
   .navbar {
-    background-color: black;
+    background-color: transparent;
     padding: 10px 30px;
   }
 
@@ -108,7 +108,6 @@
 }
 
 @media (min-width: 320px) and (max-width: 425px) {
-
   .container h5 {
     font-size: 25px;
   }
@@ -149,7 +148,7 @@
     row-gap: 20px;
   }
 
-  .isi-blog{
+  .isi-blog {
     margin-bottom: 40px;
     text-align: start;
     padding: 0;
@@ -175,7 +174,7 @@
     margin: 0 30px;
   }
 
-  .isi-blog{
+  .isi-blog {
     margin-bottom: 40px;
     text-align: start;
     align-items: center;
@@ -185,5 +184,216 @@
 
   .text-danau {
     padding-top: 10px;
+  }
+}
+
+/* Responsive refinements */
+@media (max-width: 900px) {
+  .about,
+  .container-picture,
+  .blog-container,
+  .contact-container {
+    padding: 80px 6vw;
+  }
+
+  .about {
+    gap: 38px;
+  }
+
+  .about-image img {
+    width: 38vw;
+    height: 300px;
+  }
+
+  .container-semua {
+    grid-template-columns: 1fr;
+  }
+
+  .isi-blog {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .text-danau {
+    padding-top: 0;
+  }
+
+  .contact-lokasi {
+    flex-direction: column;
+  }
+
+  .foto-contact,
+  .foto-contact iframe {
+    min-height: 330px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 13px 6vw;
+    background-color: transparent;
+  }
+
+  .nav-links {
+    top: 100%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 6vw 20px;
+    border-radius: 0 0 18px 18px;
+    background: rgba(15, 39, 36, 0.97);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 3px 0;
+  }
+
+  .nav-links a {
+    padding: 10px 14px;
+  }
+
+  .hamburger {
+    padding: 4px;
+  }
+
+  .container {
+    min-height: 720px;
+    min-height: 100svh;
+    padding: 130px 24px 80px;
+  }
+
+  .about {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 78px;
+  }
+
+  .about-image,
+  .about-image img {
+    width: 100%;
+  }
+
+  .about-image img {
+    height: clamp(230px, 48vw, 380px);
+  }
+
+  .text-about {
+    width: 100%;
+  }
+
+  .bujanginam {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .picture,
+  .picture-toba,
+  .picture-loak,
+  .picture-oto,
+  .picture-bittot,
+  .bujanginam > div:nth-child(4),
+  .bujanginam > div:nth-child(5) {
+    grid-column: span 1;
+    height: 230px;
+  }
+
+  .pembungkus {
+    flex: auto;
+  }
+
+  .footer-container {
+    align-items: flex-start;
+  }
+
+  .footer-column {
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo {
+    font-size: 19px;
+  }
+
+  .container h5 {
+    max-width: 270px;
+    font-size: 11px;
+  }
+
+  .container h1 {
+    font-size: clamp(52px, 15vw, 72px);
+  }
+
+  .container p {
+    max-width: 370px;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  .about,
+  .container-picture,
+  .blog-container,
+  .contact-container {
+    padding: 64px 22px;
+  }
+
+  .judul,
+  .judul-blog,
+  .contact-judul {
+    padding-bottom: 28px;
+  }
+
+  .bujanginam {
+    grid-template-columns: 1fr;
+  }
+
+  .picture,
+  .picture-toba,
+  .picture-loak,
+  .picture-oto,
+  .picture-bittot,
+  .bujanginam > div:nth-child(4),
+  .bujanginam > div:nth-child(5) {
+    height: 240px;
+  }
+
+  .isi-blog {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .isi-blog img {
+    width: 100%;
+    height: 190px;
+    flex-basis: auto;
+  }
+
+  .text-danau {
+    padding: 0 4px 5px;
+  }
+
+  .pembungkus {
+    grid-template-columns: 1fr;
+  }
+
+  .foto-contact,
+  .foto-contact iframe {
+    min-height: 280px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 24px;
+  }
+
+  .footer-column {
+    width: 100%;
   }
 }
