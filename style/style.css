@@ -521,8 +521,18 @@ body {
 }
 
 .hamburger {
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
   border: 0;
+  border-radius: 10px;
   background: transparent;
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
 }
 
 .container {
@@ -547,12 +557,16 @@ body {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  animation: hero-rise 0.7s both;
 }
 
 .container h1 {
   font-size: clamp(56px, 9vw, 104px);
   line-height: 1.05;
   letter-spacing: -0.065em;
+  animation:
+    hero-rise 0.8s 0.08s both,
+    hero-title-glow 2.4s ease-in-out 0.9s infinite;
 }
 
 .container p {
@@ -560,6 +574,7 @@ body {
   margin: 20px auto 0;
   color: rgba(255, 255, 255, 0.86);
   font-size: clamp(15px, 1.7vw, 18px);
+  animation: hero-rise 0.8s 0.16s both;
 }
 
 .btn {
@@ -577,9 +592,14 @@ body {
   font-weight: 600;
   text-decoration: none;
   text-transform: none;
+  animation: hero-rise 0.8s 0.24s both;
   transition:
     background 0.2s ease,
     transform 0.2s ease;
+}
+
+.btn i {
+  animation: arrow-nudge 1.6s ease-in-out infinite;
 }
 
 .btn::before,
@@ -612,6 +632,52 @@ body {
   object-fit: cover;
   border-radius: 24px;
   box-shadow: 0 24px 55px rgba(18, 43, 36, 0.15);
+  animation: gentle-float 5s ease-in-out infinite;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrow-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes hero-title-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 0 rgba(213, 229, 215, 0);
+  }
+
+  50% {
+    text-shadow: 0 0 24px rgba(213, 229, 215, 0.65);
+  }
+}
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .text-about {
@@ -876,5 +942,6 @@ body {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+    animation: none !important; /* Disable CSS animations */
   }
 }
